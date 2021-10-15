@@ -1,0 +1,233 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1f1f1;
+    height: 100vh;
+}
+
+#main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.heading {
+    color: #333;
+    margin-top: 20px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.heading__content {
+    font-family: 'Ephesis', cursive;
+}
+
+#content {
+    position: absolute;
+    top: 100px;
+    font-size: 20px;
+    font-family: 'Ephesis', cursive;
+    animation: ColorText linear 1.5s infinite;
+}
+
+@keyframes ColorText {
+    from {
+        color: red;
+    }
+    50% {
+        color: blue;
+    }
+    100%{
+        color: red;
+    }
+}
+
+#gift {
+    width: 200px;
+    height: 225px;
+    position: absolute;
+    bottom: 25%;
+    animation: rung ease 1s  infinite;
+}
+
+#gift:hover {
+    animation: none;
+    cursor: pointer;
+}
+
+#gift:hover .gift_content {
+    color: greenyellow;
+}
+
+.gift__img {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.gift_content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: #ccc;
+    font-size: 20px;
+}
+
+@keyframes rung {
+    0%{
+        transform: rotate(0);
+        bottom: calc(25%);
+    }
+    10%{
+        transform: rotate(-20deg);
+    }
+    20%{
+        transform: rotate(0);
+    }
+    30%{
+        transform: rotate(20deg);
+    }
+    40%{
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+    60%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(0);
+        bottom: calc(25% + 10px);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to{
+        transform: scale(2);
+    }
+}
+
+#music {
+    display: none;
+}
+
+#container-video {
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    width: 320px;
+    height: 178px;
+    transform-origin: bottom center;
+    animation: scaleVideo ease 1s;
+    z-index: 2;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 3px;
+    display: none;
+}
+
+#container-video span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, violet);
+    animation: fadeInLeftToRight 2s linear infinite;
+}
+
+@keyframes fadeInLeftToRight {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+#container-video span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, violet);
+    animation: fadeInTopToBottom 2s linear 1s infinite;
+}
+
+@keyframes fadeInTopToBottom {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+#container-video span:nth-child(3) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to left, transparent, violet);
+    animation: fadeInRightToLeft 2s linear infinite;
+}
+
+@keyframes fadeInRightToLeft {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+#container-video span:nth-child(4) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: linear-gradient(to top, transparent, violet);
+    animation: fadeInBottomToTop 2s linear 1s infinite;
+}
+
+@keyframes fadeInBottomToTop {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+
+#video {
+    width: 100%;
+}
+@keyframes scaleVideo {
+    from {
+        transform:  scale(0);
+        top: -20%;
+    }
+    to {
+        transform: scale(1);
+        top: -50%;
+    }
+}
