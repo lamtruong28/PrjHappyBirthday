@@ -10,6 +10,8 @@ const video = document.querySelector('#video');
 const containerVideo = document.querySelector('#container-video');
 const btn = document.querySelector('.btnMute');
 
+alert('Vui lòng không dịch qua tiếng việt để tránh bị lỗi font chữ. Xin cảm ơn!');
+
 gift.addEventListener('click', function(){
     gift.style.animation = 'scaleUp ease 1s';
     setTimeout(function(){
@@ -58,11 +60,11 @@ function contentMain(){
 
 
 function muteMusic() {
-    if(btn.innerHTML == 'Tắt tiếng'){
+    if(btn.innerHTML == 'Muted'){
         music.pause();
         btn.innerHTML = 'Play';
     }else{
         music.play();
-        btn.innerHTML = 'Tắt tiếng';
+        btn.innerHTML = 'Muted';
     }
 }
