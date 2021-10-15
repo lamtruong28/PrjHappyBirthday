@@ -58,11 +58,11 @@ function contentMain(){
 
 
 function muteMusic() {
-    if(btn.innerHTML == 'Muted' || btn.innerHTML == 'Tắt tiếng'){
+    if(btn.innerHTML == 'Tắt tiếng'){
         music.pause();
         btn.innerHTML = 'Play';
     }else{
         music.play();
-        btn.innerHTML = 'Muted';
+        btn.innerHTML = 'Tắt tiếng';
     }
 }

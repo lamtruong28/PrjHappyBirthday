@@ -233,7 +233,8 @@ body {
 }
 
 .btnMute {
-    padding: 8px 12px;
+    padding: 8px;
+    min-width: 60px;
     position: absolute;
     top: calc(50% - 210px);
     left: calc(50% - 160px);
