@@ -8,7 +8,7 @@ const heading = document.querySelector('.heading__content');
 const music = document.querySelector('#music');
 const video = document.querySelector('#video');
 const containerVideo = document.querySelector('#container-video');
-
+const btn = document.querySelector('.btnMute');
 
 gift.addEventListener('click', function(){
     gift.style.animation = 'scaleUp ease 1s';
@@ -24,6 +24,7 @@ gift.addEventListener('click', function(){
         video.play();
         video.muted = true;
         video.loop = true;
+        btn.style.display = 'block';
         contentHeading();
     },1000);
 })
@@ -51,5 +52,17 @@ function contentMain(){
         setTimeout(function(){
             contentMain();
         },100)
+    }
+}
+
+
+
+function muteMusic() {
+    if(btn.innerHTML == 'Mute'){
+        music.pause();
+        btn.innerHTML = 'Play';
+    }else{
+        music.play();
+        btn.innerHTML = 'Mute';
     }
 }

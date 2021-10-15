@@ -231,3 +231,24 @@ body {
         top: -50%;
     }
 }
+
+.btnMute {
+    padding: 8px 12px;
+    position: absolute;
+    top: calc(50% - 210px);
+    left: calc(50% - 160px);
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    animation: appear 1s linear;
+    display: none;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
