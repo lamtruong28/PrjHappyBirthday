@@ -10,6 +10,18 @@
 body {
     background-color: #f1f1f1;
     height: 100vh;
+    transition: .3s;
+    animation: fadeIn 0.3s linear;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+    
 }
 
 #main {
@@ -17,7 +29,7 @@ body {
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: 100vh;
     position: relative;
 }
 
@@ -32,23 +44,56 @@ body {
     font-family: 'Ephesis', cursive;
 }
 
+.heading__content span {
+    animation: ChangeColorText 20s linear calc(0.25s * var(--i)) infinite,
+    ChangeBgc 40s linear infinite;
+    transition: 5s;
+}
+
 #content {
     position: absolute;
     top: 100px;
     font-size: 20px;
     font-family: 'Ephesis', cursive;
-    animation: ColorText linear 1.5s infinite;
+    animation: ColorText linear 2s infinite, ChangeBgc 6s linear infinite;
 }
 
 @keyframes ColorText {
-    from {
+    0%{
         color: red;
     }
     50% {
-        color: blue;
+        color: yellow;
     }
-    100%{
+    100% {
         color: red;
+    }
+}
+
+@keyframes ChangeColorText {
+    0%{
+        color: #fff;
+        filter: hue-rotate(0);
+        filter: blur(2px);
+        text-shadow: 0 0 10px #00b3ff,
+                    0 0 20px #00b3ff,
+                    0 0 40px #00b3ff,
+                    0 0 80px #00b3ff;
+    }
+    80%,100%{
+        color: #111;
+        filter: hue-rotate(360deg);
+        filter: blur(0);
+        text-shadow: none;
+    }
+}
+
+@keyframes ChangeBgc {
+    from {
+        filter: hue-rotate(0)
+    }
+    to {
+        filter: hue-rotate(360deg)
     }
 }
 
@@ -72,7 +117,8 @@ body {
 .gift__img {
     position: absolute;
     width: 100%;
-    bottom: 0;
+    bottom: -160px;
+    transition: all linear .2s;
 }
 
 .gift_content {
@@ -114,11 +160,16 @@ body {
 }
 
 @keyframes scaleUp {
-    from {
+    0%,100% {
         transform: scale(1);
     }
-    to{
+    80%{
         transform: scale(2);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1);
     }
 }
 
@@ -130,8 +181,7 @@ body {
     position: absolute;
     top: -50%;
     left: -30%;
-    width: 320px;
-    height: 178px;
+    transform: translateX(20px);
     transform-origin: bottom center;
     animation: scaleVideo ease 1s;
     z-index: 2;
@@ -148,7 +198,7 @@ body {
     width: 100%;
     height: 3px;
     background: linear-gradient(to right, transparent, violet);
-    animation: fadeInLeftToRight 2s linear infinite;
+    animation: ChangeBgc 20s linear infinite, fadeInLeftToRight 2s linear infinite;
 }
 
 @keyframes fadeInLeftToRight {
@@ -167,7 +217,7 @@ body {
     width: 3px;
     height: 100%;
     background: linear-gradient(to bottom, transparent, violet);
-    animation: fadeInTopToBottom 2s linear 1s infinite;
+    animation: fadeInTopToBottom 2s linear 1s infinite,ChangeBgc 20s linear  infinite;
 }
 
 @keyframes fadeInTopToBottom {
@@ -186,7 +236,7 @@ body {
     width: 100%;
     height: 3px;
     background: linear-gradient(to left, transparent, violet);
-    animation: fadeInRightToLeft 2s linear infinite;
+    animation: fadeInRightToLeft 2s linear infinite ,ChangeBgc 20s linear infinite;
 }
 
 @keyframes fadeInRightToLeft {
@@ -205,7 +255,7 @@ body {
     width: 3px;
     height: 100%;
     background: linear-gradient(to top, transparent, violet);
-    animation: fadeInBottomToTop 2s linear 1s infinite;
+    animation: fadeInBottomToTop 2s linear 1s infinite,ChangeBgc 20s linear  infinite;
 }
 
 @keyframes fadeInBottomToTop {
@@ -217,16 +267,28 @@ body {
     }
 }
 
+@keyframes changeColor {
+    from {
+        filter: hue-rotate(0deg);
+    }
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
 
 #video {
     width: 100%;
+    height: 100%;
 }
 @keyframes scaleVideo {
     from {
+        opacity: 0;
         transform:  scale(0);
         top: -20%;
     }
     to {
+        opacity: 1;
         transform: scale(1);
         top: -50%;
     }
