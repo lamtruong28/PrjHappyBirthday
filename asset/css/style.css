@@ -117,7 +117,7 @@ body {
 .gift__img {
     position: absolute;
     width: 100%;
-    bottom: -160px;
+    bottom: -80px;
     transition: all linear .2s;
 }
 
@@ -164,7 +164,7 @@ body {
         transform: scale(1);
     }
     80%{
-        transform: scale(2);
+        transform: scale(1.6);
         opacity: 1;
     }
     100% {
@@ -180,8 +180,9 @@ body {
 #container-video {
     position: absolute;
     top: -50%;
-    left: -30%;
-    transform: translateX(20px);
+    /* left: -30%;
+    transform: translateX(20px); */
+    transform: scale(1.5);
     transform-origin: bottom center;
     animation: scaleVideo ease 1s;
     z-index: 2;
@@ -289,7 +290,7 @@ body {
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: scale(1.5);
         top: -50%;
     }
 }
