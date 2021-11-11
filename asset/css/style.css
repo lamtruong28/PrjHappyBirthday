@@ -117,7 +117,7 @@ body {
 .gift__img {
     position: absolute;
     width: 100%;
-    bottom: -80px;
+    bottom: -90px;
     transition: all linear .2s;
 }
 
@@ -179,7 +179,7 @@ body {
 
 #container-video {
     position: absolute;
-    top: -50%;
+    top: -45%;
     transform: scale(1.5);
     transform-origin: bottom center;
     animation: scaleVideo ease 1s;
@@ -298,7 +298,7 @@ body {
     padding: 8px;
     min-width: 60px;
     position: absolute;
-    top: 67%;
+    top: 69%;
     left: 40px;
     outline: none;
     border: none;
